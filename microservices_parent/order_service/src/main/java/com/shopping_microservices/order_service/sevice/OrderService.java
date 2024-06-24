@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import com.shopping_microservices.order_service.dto.OrderLineItemsDto;
 import com.shopping_microservices.order_service.dto.OrderRequest;
@@ -19,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 
     private final OrderRepository orderRepository;
+    private final WebClient webClient;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -29,6 +31,11 @@ public class OrderService {
             .toList();
 
         order.setOrderLineItems(orderLineItems);
+        boolean result = webClient.get()
+            .uri("http://localhost:8082/api/inventory/{sku-code}/{quantity}",1,2)
+            .retrieve()
+            .bodyToMono(Boolean.class)
+            .block();
         orderRepository.save(order);
     }
 

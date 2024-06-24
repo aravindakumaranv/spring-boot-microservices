@@ -8,6 +8,6 @@ import com.shopping_microservices.inventory_service.model.InventoryItem;
 
 public interface InventoryRepository extends JpaRepository<InventoryItem, Long>{
 
-    Optional<InventoryItem> findBySkuCode();
+    Optional<InventoryItem> findBySkuCode(String skuCode);
 
 }

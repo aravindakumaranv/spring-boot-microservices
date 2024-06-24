@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "InventoryServiceApplication",
+            "request": "launch",
+            "mainClass": "com.shopping_microservices.inventory_service.InventoryServiceApplication",
+            "projectName": "inventory_service"
+        },
+        {
+            "type": "java",
             "name": "OrderserviceApplication",
             "request": "launch",
             "mainClass": "com.shopping_microservices.order_service.OrderserviceApplication",
@@ -69,6 +76,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.shopping_microservices.order_service.OrderserviceApplication",
             "projectName": "order_service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<inventory_service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.shopping_microservices.Main",
+            "projectName": "inventory_service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

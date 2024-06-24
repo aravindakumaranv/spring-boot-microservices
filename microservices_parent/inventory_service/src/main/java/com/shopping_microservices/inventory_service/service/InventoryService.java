@@ -8,9 +8,11 @@ import com.shopping_microservices.inventory_service.model.InventoryItem;
 import com.shopping_microservices.inventory_service.repository.InventoryRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class InventoryService {
     
     private final InventoryRepository inventoryRepository;
@@ -25,8 +27,9 @@ public class InventoryService {
 
     @Transactional(readOnly = true)
     public boolean isInStock(String skuCode, Integer quantity) {
-        if(inventoryRepository.findBySkuCode().isPresent()) {
-            if(inventoryRepository.findBySkuCode().get().getQuantity()>=quantity){
+        log.info("Inside inventory service");
+        if(inventoryRepository.findBySkuCode(skuCode).isPresent()) {
+            if(inventoryRepository.findBySkuCode(skuCode).get().getQuantity()>=quantity){
                 return true;
             }
         }

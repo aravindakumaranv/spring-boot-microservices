@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DiscoveryServerApplication",
+            "request": "launch",
+            "mainClass": "com.shopping_microservices.discovery_server.DiscoveryServerApplication",
+            "projectName": "discovery_server"
+        },
+        {
+            "type": "java",
             "name": "InventoryServiceApplication",
             "request": "launch",
             "mainClass": "com.shopping_microservices.inventory_service.InventoryServiceApplication",

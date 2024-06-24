@@ -2,6 +2,28 @@
     "configurations": [
         {
             "type": "java",
+            "name": "OrderserviceApplication",
+            "request": "launch",
+            "mainClass": "com.shopping_microservices.order_service.OrderserviceApplication",
+            "projectName": "orderservice"
+        },
+        {
+            "type": "java",
+            "name": "OrderserviceApplication",
+            "request": "launch",
+            "mainClass": "com.shopping_microservices.order_service.orderservice.OrderserviceApplication",
+            "projectName": "orderservice",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=56548 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=orderservice"
+        },
+        {
+            "type": "java",
+            "name": "ProductServiceApplication",
+            "request": "launch",
+            "mainClass": "com.shopping_microservices.product_service.ProductServiceApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ShoppingApplication<shopping>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -15,8 +37,18 @@
             "name": "Spring Boot-ProductServiceApplication<shopping>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.shopping.productservice.ProductServiceApplication",
+            "mainClass": "com.shopping_microservices.product_service.ProductServiceApplication",
             "projectName": "shopping",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProductServiceApplication<product_service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.shopping_microservices.product_service.ProductServiceApplication",
+            "projectName": "product_service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

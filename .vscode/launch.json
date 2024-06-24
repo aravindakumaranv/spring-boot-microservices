@@ -51,6 +51,26 @@
             "projectName": "product_service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-OrderserviceApplication<order_service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.shopping.orderservice.OrderserviceApplication",
+            "projectName": "order_service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-OrderserviceApplication<order_service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.shopping_microservices.order_service.OrderserviceApplication",
+            "projectName": "order_service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

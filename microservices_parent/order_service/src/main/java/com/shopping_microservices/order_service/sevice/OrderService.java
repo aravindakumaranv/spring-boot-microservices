@@ -3,6 +3,7 @@ package com.shopping_microservices.order_service.sevice;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.shopping_microservices.order_service.dto.OrderLineItemsDto;
 import com.shopping_microservices.order_service.dto.OrderRequest;
@@ -14,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class OrderService {
 
     private final OrderRepository orderRepository;

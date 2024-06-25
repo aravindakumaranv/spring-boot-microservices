@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient.Builder webClientBuilder;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -31,8 +31,8 @@ public class OrderService {
             .toList();
 
         order.setOrderLineItems(orderLineItems);
-        boolean result = webClient.get()
-            .uri("http://localhost:8082/api/inventory/{sku-code}/{quantity}",1,2)
+        boolean result = webClientBuilder.build().get()
+            .uri("http://inventory-service/api/inventory/{sku-code}/{quantity}",1,2)
             .retrieve()
             .bodyToMono(Boolean.class)
             .block();

@@ -6,7 +6,7 @@
             "request": "launch",
             "mainClass": "com.shopping_microservices.discovery_server.DiscoveryServerApplication",
             "projectName": "discovery_server",
-            "vmArgs": " -Dcom.sun.management.jmxremote"
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51542 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=discovery_server"
         },
         {
             "type": "java",
@@ -14,7 +14,7 @@
             "request": "launch",
             "mainClass": "com.shopping_microservices.inventory_service.InventoryServiceApplication",
             "projectName": "inventory_service",
-            "vmArgs": " -Dcom.sun.management.jmxremote"
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51543 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=inventory_service"
         },
         {
             "type": "java",
@@ -66,7 +66,8 @@
             "mainClass": "com.shopping_microservices.product_service.ProductServiceApplication",
             "projectName": "product_service",
             "args": "",
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51545 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=product_service"
         },
         {
             "type": "java",
@@ -93,7 +94,7 @@
             "name": "Spring Boot-Main<inventory_service>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.shopping_microservices.Main",
+            "mainClass": "com.shopping_microservices.InventoryServiceApplication",
             "projectName": "inventory_service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
@@ -105,6 +106,27 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.shopping_microservices.order_service.OrderServiceApplication",
             "projectName": "order_service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51544 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=order_service"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<api_gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.shopping_microservices.Main",
+            "projectName": "api_gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGatewayApplication<api_gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.shopping_microservices.api_gateway.ApiGatewayApplication",
+            "projectName": "api_gateway",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }

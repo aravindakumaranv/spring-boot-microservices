@@ -17,6 +17,7 @@
 		<module>order_service</module>
 		<module>inventory_service</module>
 		<module>discovery_server</module>
+		<module>api_gateway</module>
 	</modules>
 	<name>microservices_parent</name>
 	<description>Demo project for Spring Boot</description>
